@@ -11,7 +11,9 @@
     "lint:fix": "npm run lint -- --fix",
     "unit": "istanbul test _mocha --reporter=spec test/index.js",
     "test": "npm run lint && npm run unit",
-    "version": "grunt dist && git add dist/"
+    "version": "grunt dist && git add dist/",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -51,6 +53,8 @@
     "hmac-drbg": "^1.0.1",
     "inherits": "^2.0.4",
     "minimalistic-assert": "^1.0.1",
-    "minimalistic-crypto-utils": "^1.0.1"
-  }
+    "minimalistic-crypto-utils": "^1.0.1",
+    "@snyk/protect": "latest"
+  },
+  "snyk": true
 }
